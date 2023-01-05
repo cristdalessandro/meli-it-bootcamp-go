@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"strconv"
 
 	"github.com/gin-gonic/gin"
@@ -34,5 +35,9 @@ func getOneHandler(ctx *gin.Context) {
 	}
 
 	product := Prods.getById(id)
+	if product == nil {
+		ctx.AbortWithError(404, errors.New("Product not found"))
+		return
+	}
 	ctx.JSON(200, product)
 }
