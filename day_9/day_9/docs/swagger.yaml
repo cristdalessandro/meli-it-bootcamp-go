@@ -1,0 +1,8 @@
+host: localhost:3000
+info:
+  contact: {}
+  description: This is the go web module practice
+  title: MELI bootcamp
+  version: "1.0"
+paths: {}
+swagger: "2.0"
