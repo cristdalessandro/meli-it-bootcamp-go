@@ -63,11 +63,6 @@ func (handlers *productsHandler) Create(ctx *gin.Context) {
 		return
 	}
 
-	// if product := handlers.s.GetByCodeValue(req.Code_value); product != nil {
-	// 	ctx.AbortWithError(400, errors.New("product already exist"))
-	// 	return
-	// }
-
 	if _, err := time.Parse("2006-01-02", req.Expiration); err != nil {
 		ctx.AbortWithError(400, errors.New("invalid date format"))
 		return
